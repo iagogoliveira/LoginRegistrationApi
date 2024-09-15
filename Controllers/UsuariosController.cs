@@ -51,8 +51,6 @@ namespace ProjetoLoginAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            _usuarioServices.AutenticarUsuario(loginDto.Login, loginDto.Senha);
-
             bool sucessoLogin = _usuarioServices.AutenticarUsuario(loginDto.Login, loginDto.Senha);
 
             if (sucessoLogin)
