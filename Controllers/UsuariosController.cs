@@ -1,0 +1,68 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ProjetoLoginAPI.Classes;
+using ProjetoLoginAPI.DTOs;
+using ProjetoLoginAPI.Services;
+namespace ProjetoLoginAPI.Controllers
+{
+    [ApiController]
+    [Route("[controller]")]
+    public class UsuariosController : ControllerBase
+    {
+
+        private readonly UsuarioServices _usuarioServices;
+        public UsuariosController(UsuarioServices usuarioServices)
+        {
+            _usuarioServices = usuarioServices;
+        }
+
+        [HttpPost("CadastrarUsuario")]
+        public IActionResult CadastrarUsuario([FromBody] CriarUsuarioDto usuarioDto)
+        {
+
+            if(usuarioDto == null)
+            {
+                return BadRequest("Usuário não pode ser nulo.");
+            }
+
+
+            var usuario = new Usuario(usuarioDto.Nome, usuarioDto.Login, usuarioDto.Senha, usuarioDto.Email);
+
+            try
+            {
+                _usuarioServices.RegistrarUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return BadRequest(ex.Message);
+            }
+
+
+            return Ok();
+
+        }
+
+        [HttpPost("Login")]
+        public IActionResult LoginUsuario([FromBody] LoginUsuarioDto loginDto)
+        {
+
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _usuarioServices.AutenticarUsuario(loginDto.Login, loginDto.Senha);
+
+            bool sucessoLogin = _usuarioServices.AutenticarUsuario(loginDto.Login, loginDto.Senha);
+
+            if (sucessoLogin)
+            {
+                return Ok("Login bem sucedido.");
+            }
+            else
+            {
+                return Unauthorized("Credenciais inválidas.");
+            }
+        }
+    }
+}

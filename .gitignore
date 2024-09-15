@@ -1,0 +1,28 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Compiled DLLs
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio Code
+.vscode/
+
+# Dependency directories
+/packages/
+/bin/
+/obj/
+node_modules/
+
+# Logs
+*.log
+
+# Auto-generated files
+*.g.cs
+*.g.i.cs
