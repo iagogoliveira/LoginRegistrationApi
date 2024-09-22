@@ -45,8 +45,7 @@ namespace ProjetoLoginAPI.Controllers
         [HttpPost("Login")]
         public IActionResult LoginUsuario([FromBody] LoginUsuarioDto loginDto)
         {
-
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -55,11 +54,11 @@ namespace ProjetoLoginAPI.Controllers
 
             if (sucessoLogin)
             {
-                return Ok("Login bem sucedido.");
+                return Ok(new { message = "Login bem sucedido."});
             }
             else
             {
-                return Unauthorized("Credenciais inválidas.");
+                return Unauthorized(new { message = "Credenciais inválidas."});
             }
         }
     }
