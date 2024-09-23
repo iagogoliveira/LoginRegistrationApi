@@ -1,4 +1,4 @@
-﻿namespace ProjetoLoginAPI.Classes
+﻿namespace ProjetoLoginAPI.Models
 {
     public class Usuario
     {

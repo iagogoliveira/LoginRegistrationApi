@@ -1,4 +1,4 @@
-﻿using ProjetoLoginAPI.Classes;
+﻿using ProjetoLoginAPI.Models;
 using ProjetoLoginAPI.Repositories;
 
 namespace ProjetoLoginAPI.Services

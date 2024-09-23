@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProjetoLoginAPI.Classes;
+using ProjetoLoginAPI.Models;
 using ProjetoLoginAPI.DTOs;
 using ProjetoLoginAPI.Services;
 namespace ProjetoLoginAPI.Controllers
