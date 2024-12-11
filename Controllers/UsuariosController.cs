@@ -15,7 +15,7 @@ namespace ProjetoLoginAPI.Controllers
             _usuarioServices = usuarioServices;
         }
 
-        [HttpPost("CadastrarUsuario")]
+        [HttpPost("Cadastro")]
         public IActionResult CadastrarUsuario([FromBody] CriarUsuarioDto usuarioDto)
         {
 

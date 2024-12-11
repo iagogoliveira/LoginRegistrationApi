@@ -50,10 +50,5 @@ namespace ProjetoLoginAPI.Services
                 return true;
             }
         }
-
-
-
-
-
     }
 }
