@@ -5,11 +5,11 @@ namespace ProjetoLoginAPI.Data
 {
     public class AppDbContext : DbContext
     {
-        DbSet<Usuario> Usuarios { get; set; }
+        DbSet<User> Users { get; set; }
        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Banco.sqlite");
+            optionsBuilder.UseSqlServer("Server=localhost;Database=master;Trusted_Connection=True;");
             base.OnConfiguring(optionsBuilder);
         }
     }

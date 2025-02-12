@@ -1,10 +1,10 @@
 ﻿namespace ProjetoLoginAPI.DTOs
 {
-    public class CriarUsuarioDto
+    public class CreateUserDto
     {
-        public string Nome { get; set; }
+        public string Name { get; set; }
         public string Login {  get; set; }
-        public string Senha {  get; set; }
+        public string Password {  get; set; }
         public string Email {  get; set; }
     }
 }

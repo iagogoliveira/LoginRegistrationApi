@@ -4,25 +4,25 @@ using ProjetoLoginAPI.Data;
 
 namespace ProjetoLoginAPI.Repositories
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UserRepository : IUserRepository
     {
         private readonly AppDbContext _context;
 
-        public UsuarioRepository(AppDbContext context) { _context = context; }
+        public UserRepository(AppDbContext context) { _context = context; }
 
 
 
-        public void Adicionar(Usuario usuario)
+        public void Add(User user)
         {
-            _context.Add(usuario);
+            _context.Add(user);
             _context.SaveChanges();
         }
 
 
 
-        public async Task<Usuario> obterPorLoginAsync(string login)
+        public async Task<User> getLoginAsync(string login)
         {
-            return await _context.Set<Usuario>()
+            return await _context.Set<User>()
                                  .FirstOrDefaultAsync(u => u.Login == login);
         }
     }
