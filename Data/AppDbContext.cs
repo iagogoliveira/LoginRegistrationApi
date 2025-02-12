@@ -10,7 +10,7 @@ namespace ProjetoLoginAPI.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=localhost;Database=urlShortener;Trusted_Connection=True;TrustServerCertificate=True;",
-                            options => options.MigrationsHistoryTable("__MigrationsHistory_Login"));
+                            options => options.MigrationsHistoryTable("__MigrationsHistory_LoginRegister"));
 
             base.OnConfiguring(optionsBuilder);
         }
