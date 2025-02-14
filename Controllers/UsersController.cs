@@ -43,7 +43,7 @@ namespace ProjetoLoginAPI.Controllers
         }
 
         [HttpPost("Login")]
-        public IActionResult LoginUsuario([FromBody] UserLoginDto loginDto)
+        public IActionResult UserLogin([FromBody] UserLoginDto loginDto)
         {
             if (!ModelState.IsValid)
             {
