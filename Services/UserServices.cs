@@ -15,6 +15,7 @@ namespace ProjetoLoginAPI.Services
         public void CreateUser(User user)
         {
             user.Password = PasswordCriptografy.GeneratePasswordHash(user.Password);
+            user.Id = Guid.NewGuid();
 
             _userRepository.Add(user);
         }
